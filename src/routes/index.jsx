@@ -1,0 +1,30 @@
+﻿import AboutPage from "./about/AboutPage";
+import BlogPage from "./blog/BlogPage";
+import CartPage from "../features/cart/CartPage";
+import CheckoutPage from "../features/checkout/CheckoutPage";
+import ContactPage from "./contact/ContactPage";
+import HomePage from "./home/HomePage";
+import MenuPage from "../features/menu/MenuPage";
+import PaymentPage from "../features/payment/PaymentPage";
+import RegistrationPage from "../features/registration/RegistrationPage";
+import MenuItemPage from "./menu-item/MenuItemPage";
+import NotFoundPage from "./not-found/NotFoundPage";
+import BlogPostPage from "./blog-post/BlogPostPage";
+import ProfilePage from "../features/profile/ProfilePage";
+
+export {
+  AboutPage,
+  BlogPage,
+  CartPage,
+  CheckoutPage,
+  ContactPage,
+  HomePage,
+  MenuPage,
+  PaymentPage,
+  RegistrationPage,
+  MenuItemPage,
+  NotFoundPage,
+  BlogPostPage,
+  ProfilePage,
+};
+
