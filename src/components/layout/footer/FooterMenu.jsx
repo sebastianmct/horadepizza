@@ -21,9 +21,9 @@ const FooterMenu = () => {
         ))}
       </ul>
       <ul>
-        <li><Link to="/">Inicio</Link></li>
-        <li><Link to="/menu">Menu</Link></li>
-        <li><Link to="/contact">Contacto</Link></li>
+        <li key="home"><Link to="/">Inicio</Link></li>
+        <li key="menu"><Link to="/menu">Menu</Link></li>
+        <li key="contact"><Link to="/contact">Contacto</Link></li>
       </ul>
     </nav>
   );

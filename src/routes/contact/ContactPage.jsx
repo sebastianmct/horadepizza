@@ -2,11 +2,10 @@
 import { useEffect, useRef } from "react";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import ReCAPTCHA from "react-google-recaptcha";
 import { Link } from "react-router-dom";
 import validateForm from "../../utils/validate-form";
 import ResetLocation from "../../utils/ResetLocation";
-import { CAPTCHA_URL, CAPTCHA_KEY } from "../../data/constants";
+// CAPTCHA removido
 const ENVIRONMENT = import.meta.env.MODE;
 import { slideInLeft } from "../../utils/animations";
 const ContactPage = () => {
@@ -18,8 +17,8 @@ const ContactPage = () => {
   const [submit, setSubmit] = useState(false);
   const [formError, setFormError] = useState({});
   const [loading, setLoading] = useState(false);
-  const [captchaError, setCaptchaError] = useState("");
-  const captchaRef = useRef();
+  // const [captchaError, setCaptchaError] = useState("");
+  // const captchaRef = useRef();
   const validate = validateForm("contact");
   useEffect(() => {
     document.title = "Contacto | Es hora de pizza";
@@ -34,15 +33,8 @@ const ContactPage = () => {
       setSubmit(false);
       return;
     }
-    const isCaptchaValid = await verifyCaptcha();
-    if (isCaptchaValid.success) {
-      setSubmit(true);
-    } else {
-      setCaptchaError(isCaptchaValid.message);
-      setSubmit(false);
-      setLoading(false);
-      return;
-    }
+    // CAPTCHA removido: continuar sin verificación
+    setSubmit(true);
     ResetLocation();
     setLoading(false);
     setFormValue({ fullname: "", email: "", message: "" });
@@ -52,32 +44,7 @@ const ContactPage = () => {
     const { name, value } = e.target;
     setFormValue({ ...formValue, [name]: value });
   };
-  const verifyCaptcha = async () => {
-    let token = captchaRef.current?.getValue();
-    if (token.length === 0) {
-      captchaRef.current?.reset();
-      return { success: false, message: "CaptCha" };
-    }
-    try {
-      const response = await fetch(CAPTCHA_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ token }),
-      });
-      const result = await response.json();
-      if (!response.ok) {
-        throw new Error(result.message);
-      }
-      return { success: true };
-    } catch (error) {
-      if (ENVIRONMENT === "development") console.log("Error en el CAPTHA:", error.message);
-      return { success: false, message: "Error de servidor: Captcha Fallo" };
-    } finally {
-      captchaRef.current?.reset();
-    }
-  };
+  // CAPTCHA removido
   return (
     <motion.main
       className="contact"
@@ -170,12 +137,7 @@ const ContactPage = () => {
           <span className="input-validation-error" aria-live="assertive" id="message-error">
             {formError.message}
           </span>
-          <ReCAPTCHA ref={captchaRef} sitekey={"6LcvQPArAAAAAHEDDICAJiI2g6K9wQ8qakI2pajn"} theme="dark" aria-describedby="captcha-error" />
-          {captchaError && (
-            <span className="input-validation-error" aria-live="assertive" id="captcha-error">
-              {captchaError}
-            </span>
-          )}
+          {/* CAPTCHA removido */}
           <button type="submit" className="active-button-style" aria-label="enviar mensaje">
             Enviar
           </button>

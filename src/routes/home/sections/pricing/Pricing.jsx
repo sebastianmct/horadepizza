@@ -4,6 +4,7 @@ import ResetLocation from "../../../../utils/ResetLocation";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 import menuPricing from "../../../../data/menu-pricing";
+import { formatPrice } from "../../../../utils/formatPrice";
 
 const Pricing = () => {
   return (
@@ -34,8 +35,7 @@ const Pricing = () => {
                   <section className="pricing-preview__prices-details flex-container flex-row txt-center">
                     <h3 className="pop-font">{menu.name}</h3>
                     <p>
-                      <span>{menu.currency}</span>
-                      {menu.price}
+                      {formatPrice(Math.round(menu.price * 1000)).replace(/[^0-9.]/g, "")}
                     </p>
                   </section>
                   <p>{menu.description}</p>

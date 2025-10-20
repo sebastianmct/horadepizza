@@ -3,11 +3,9 @@ import validateForm from "../../utils/validate-form";
 import { motion } from "framer-motion";
 import ResetLocation from "../../utils/ResetLocation";
 import "./assets/register.css";
-import { CAPTCHA_KEY, CAPTCHA_URL } from "../../data/constants";
-const ENVIRONMENT = import.meta.env.MODE;
+// CAPTCHA removido
 import { slideInLeft } from "../../utils/animations";
 import { Link } from "react-router-dom";
-import ReCAPTCHA from "react-google-recaptcha";
 import { useRef } from "react";
 import { createUser } from "./api/createUser";
 const initialFormValue = {
@@ -25,9 +23,9 @@ const RegistrationPage = ({ activateLoginModal }) => {
   const [submit, setSubmit] = useState(false);
   const [registrationFail, setRegistrationFail] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [captchaError, setCaptchaError] = useState("");
+  // const [captchaError, setCaptchaError] = useState("");
 
-  const captchaRef = useRef();
+  // const captchaRef = useRef();
   useEffect(() => {
     document.title = "Registrarse | Es hora de pizza";
   }, []);
@@ -42,13 +40,7 @@ const RegistrationPage = ({ activateLoginModal }) => {
       return;
     }
 
-    const isCaptchaValid = await verifyCaptcha();
-    if (!isCaptchaValid.success) {
-      setLoading(false);
-      setSubmit(false);
-      setCaptchaError(isCaptchaValid.message);
-      return;
-    }
+    // CAPTCHA removido: continuar sin verificación
     let currForm = { ...formValue };
     if (currForm.repeatPassword.length > 0) {
       delete currForm.repeatPassword;
@@ -69,7 +61,7 @@ const RegistrationPage = ({ activateLoginModal }) => {
       setSubmit(true);
     }
     setLoading(false);
-    setCaptchaError("");
+    // setCaptchaError("");
     setFormValue(initialFormValue);
   };
   const updateForm = (e) => {
@@ -78,31 +70,7 @@ const RegistrationPage = ({ activateLoginModal }) => {
   };
   const validate = validateForm("registration");
 
-  const verifyCaptcha = async () => {
-    let token = captchaRef.current?.getValue();
-    if (token.length === 0) {
-      captchaRef.current?.reset();
-      return { success: false, message: "reCaptcha" };
-    }
-    try {
-      const response = await fetch(CAPTCHA_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ token }),
-      });
-      if (!response.ok) {
-        throw new Error(response.message);
-      }
-      return { success: true };
-    } catch (error) {
-      if (ENVIRONMENT === "development") console.log("Error en verifyCaptcha:", error.message);
-      return { success: false, message: "Fallo del servidor" };
-    } finally {
-      captchaRef.current?.reset();
-    }
-  };
+  // CAPTCHA removido
   return (
     <motion.main
       className="register"
@@ -232,10 +200,7 @@ const RegistrationPage = ({ activateLoginModal }) => {
             <Link to="/privacy">Politicas de Privacidad</Link>. Es posible que reciba una notificación por correo electrónico de nuestra parte y puede darse de baja en cualquier
             momento.
           </p>
-          <ReCAPTCHA ref={captchaRef} sitekey={"6LcvQPArAAAAAHEDDICAJiI2g6K9wQ8qakI2pajn"} theme="dark" aria-describedby="captcha-error" />
-          <span className="captcha-input-validation-error" aria-live="assertive" id="captcha-error">
-            {captchaError}
-          </span>
+          {/* CAPTCHA removido */}
           <button className="register__submit" type="submit" aria-label="Sign up">
             Registrarse
           </button>

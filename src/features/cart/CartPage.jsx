@@ -11,7 +11,7 @@ import CheckoutBtn from "../checkout/components/CheckoutBtn";
 const CartPage = ({ CartItem, activateLoginModal, isLoggedIn }) => {
   const { cart } = useCart();
   useEffect(() => {
-    document.title = "Shopping Cart | Pizza Time";
+    document.title = "Carrito de compras | Pizza Time";
   }, []);
   return (
     <motion.main
@@ -20,7 +20,7 @@ const CartPage = ({ CartItem, activateLoginModal, isLoggedIn }) => {
       whileInView={slideInLeft.whileInView}
       exit={slideInLeft.exit}
       transition={slideInLeft.transition}>
-      <h2>Shopping cart</h2>
+      <h2>Carrito de compras</h2>
       {cart.length === 0 ? <EmptyCart /> : CartItem}
       <div className="cart-totals__interaction">
         <CheckoutBtn

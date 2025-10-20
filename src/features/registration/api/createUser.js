@@ -3,6 +3,17 @@ import { USERS_URL } from "../../../data/constants";
 
 export const createUser = async (user) => {
   try {
+    // En modo desarrollo, simular registro exitoso si no hay backend
+    if (ENVIRONMENT === "development" && (!USERS_URL || USERS_URL.includes("localhost:3001"))) {
+      console.log("Modo desarrollo: Simulando registro exitoso para:", user.email);
+      
+      // Simular delay de red
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Simular éxito
+      return { success: true };
+    }
+
     const response = await fetch(USERS_URL, {
       method: "POST",
       headers: {

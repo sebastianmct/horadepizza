@@ -11,7 +11,7 @@ export default defineConfig({
       },
     }),
   ],
-  base: '/horadepizza/', // Nombre del repositorio en GitHub
+  base: '/', 
   server: {
     port: 3000, 
     open: true, 
@@ -20,5 +20,8 @@ export default defineConfig({
     alias: {
       '@': '/src',
     },
+  },
+  test: {
+    environment: 'jsdom',
   },
 })

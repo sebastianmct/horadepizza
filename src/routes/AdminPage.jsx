@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import MenuManagement from './admin/MenuManagement';
 
 export default function AdminPage() {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -354,14 +355,7 @@ export default function AdminPage() {
         );
       
       case 'menu':
-        return (
-          <div>
-            <h1 style={styles.title}>Gestión del Menú</h1>
-            <div style={styles.pageCard}>
-              <p style={styles.pageText}>Administra el menú de pizzas, precios y disponibilidad.</p>
-            </div>
-          </div>
-        );
+        return <MenuManagement />;
       
       case 'customers':
         return (

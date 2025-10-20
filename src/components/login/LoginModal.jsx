@@ -79,7 +79,7 @@ const LoginModal = ({ setIsLoggedIn, setIsLoginModalOpen, setUser, isLoginModalO
           X
         </button>
         <div className="modal__content">
-          <h2 id="modal-title">Log in</h2>
+          <h2 id="modal-title">Iniciar sesión</h2>
           {loading ? (
             <div role="status" className="loader">
               <p>Almost there...</p>
@@ -101,8 +101,8 @@ const LoginModal = ({ setIsLoggedIn, setIsLoginModalOpen, setUser, isLoginModalO
                 name="email"
                 type="text"
                 autoComplete="true"
-                placeholder="Email"
-                aria-label="Email address"
+                placeholder="Correo"
+                aria-label="Correo electrónico"
                 aria-describedby={formError.email ? "email-error" : undefined}
               />
               <span id="email-error" className="modal__form__error">
@@ -114,8 +114,8 @@ const LoginModal = ({ setIsLoggedIn, setIsLoginModalOpen, setUser, isLoginModalO
                 name="password"
                 type="password"
                 autoComplete="true"
-                placeholder="Password"
-                aria-label="Password"
+                placeholder="Contraseña"
+                aria-label="Contraseña"
                 aria-describedby={formError.password ? "password-error" : undefined}
               />
               <span id="password-error" className="modal__form__error">
@@ -128,16 +128,16 @@ const LoginModal = ({ setIsLoggedIn, setIsLoginModalOpen, setUser, isLoginModalO
                     hideMenu();
                   }}
                   to="/register"
-                  aria-label="Register a new account"
+                  aria-label="Registrar una nueva cuenta"
                   className="modal__buttons__signup">
-                  Sign up
+                  Registrarse
                 </LinkButton>
                 <button
-                  aria-label="Log in to account"
+                  aria-label="Iniciar sesión"
                   type="submit"
                   disabled={loading}
                   className="modal__buttons__login">
-                  Log in
+                  Iniciar sesión
                 </button>
               </div>
             </form>

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import ResetLocation from "../../../../utils/ResetLocation";
 import pizzaMenuPreview from "../../../../data/menu-preview";
+import { formatPrice } from "../../../../utils/formatPrice";
 
 const Menu = () => {
   return (
@@ -34,8 +35,7 @@ const Menu = () => {
               <p>{pizza.description}</p>
               <div className="menu-preview__meal-pricing flex-container flex-row txt-center">
                 <p>
-                  <span>{pizza.currency}</span>
-                  {pizza.price}
+                  {formatPrice(Math.round(pizza.price * 1000)).replace(/[^0-9.]/g, "")}
                 </p>
               </div>
             </div>
