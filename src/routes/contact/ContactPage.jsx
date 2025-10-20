@@ -170,7 +170,7 @@ const ContactPage = () => {
           <span className="input-validation-error" aria-live="assertive" id="message-error">
             {formError.message}
           </span>
-          <ReCAPTCHA ref={captchaRef} sitekey={CAPTCHA_KEY} theme="dark" aria-describedby="captcha-error" />
+          <ReCAPTCHA ref={captchaRef} sitekey={"6LcvQPArAAAAAHEDDICAJiI2g6K9wQ8qakI2pajn"} theme="dark" aria-describedby="captcha-error" />
           {captchaError && (
             <span className="input-validation-error" aria-live="assertive" id="captcha-error">
               {captchaError}

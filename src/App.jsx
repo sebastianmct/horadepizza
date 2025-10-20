@@ -2,6 +2,8 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Header from "./components/layout/header/Header";
 import Footer from "./components/layout/footer/Footer";
+import AdminPage from './routes/AdminPage.jsx';
+
 import {
   AboutPage,
   BlogPage,
@@ -68,6 +70,7 @@ function App() {
     hideMenu();
     setIsLoginModalOpen(!isLoginModalOpen);
   };
+
   const handleLogoutUser = async () => {
     const response = await logoutUser();
     if (response.success) {
@@ -107,7 +110,6 @@ function App() {
 
         <Routes>
           <Route path="/" element={<HomePage />} />
-
           <Route
             path="/cart"
             element={
@@ -118,7 +120,6 @@ function App() {
               />
             }
           />
-
           <Route
             exact
             path="/menu"
@@ -145,7 +146,6 @@ function App() {
           <Route path="/menu/:name" element={<MenuItemPage />} />
           <Route path="/checkout" element={<CheckoutPage currentUser={user} />} />
           <Route path="/payment" element={<PaymentPage currentUser={user} />} />
-
           <Route path="/contact" element={<ContactPage />} />
           <Route exact path="/blog" element={<BlogPage />} />
           <Route path="/blog/:name" element={<BlogPostPage />} />
@@ -154,6 +154,7 @@ function App() {
             path="/register"
             element={isLoggedIn ? <NotFoundPage /> : <RegistrationPage activateLoginModal={activateLoginModal} />}
           />
+          <Route path="/admin" element={<AdminPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Footer />
@@ -163,4 +164,3 @@ function App() {
 }
 
 export default App;
-

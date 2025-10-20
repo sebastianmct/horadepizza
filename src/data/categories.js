@@ -20,7 +20,7 @@ export const categories = [
     id: "Drinks",
   },
   {
-    name: "Sale",
-    id: "Sale",
+    name: "Rebajas",
+    id: "Rebajas",
   },
 ];

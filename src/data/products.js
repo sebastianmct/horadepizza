@@ -337,7 +337,7 @@ export const products = [
     ItemImg: CocaCola,
     ItemName: "Coca-Cola Original",
     ItemPrice: (1000),
-    Category: "Drinks",
+    Category: "Bebidas",
     attributes: [],
   },
 
@@ -346,7 +346,7 @@ export const products = [
     ItemImg: MountainDew,
     ItemName: "Montaña de Citrus",
     ItemPrice: (1000),
-    Category: "Drinks",
+    Category: "Bebidas",
     attributes: [],
   },
   {
@@ -354,7 +354,7 @@ export const products = [
     ItemImg: PepsiCola,
     ItemName: "Pepsi Cola",
     ItemPrice: (1000),
-    Category: "Drinks",
+    Category: "Bebidas",
     attributes: [],
   },
   {
@@ -362,7 +362,7 @@ export const products = [
     ItemImg: Milo,
     ItemName: "Te Dulce Famoso de Milos",
     ItemPrice: (1000),
-    Category: "Drinks",
+    Category: "Bebidas",
     attributes: [],
   },
   {
@@ -370,7 +370,7 @@ export const products = [
     ItemImg: DrPepper,
     ItemName: "Bebida Dr Pepper Soda",
     ItemPrice: (1000),
-    Category: "Drinks",
+    Category: "Bebidas",
     attributes: [],
   },
   {
@@ -378,7 +378,7 @@ export const products = [
     ItemImg: SpriteCaffeine,
     ItemName: "Bebida Sprite Sin Cafeína Limón-Lima",
     ItemPrice: (1000),
-    Category: "Drinks",
+    Category: "Bebidas",
     attributes: [],
   },
   {
@@ -386,7 +386,7 @@ export const products = [
     ItemImg: GreatValueSweet,
     ItemName: "Te Helado Dulce de Gran Valor",
     ItemPrice: (1000),
-    Category: "Drinks",
+    Category: "Bebidas",
     attributes: [],
   },
   {
@@ -394,7 +394,7 @@ export const products = [
     ItemImg: SToK,
     ItemName: "Cafe Helado",
     ItemPrice: (1000),
-    Category: "Drinks",
+    Category: "Bebidas",
     attributes: [],
   },
   {
@@ -402,7 +402,7 @@ export const products = [
     ItemImg: Lipton,
     ItemName: "Te Lipton Verde Te ",
     ItemPrice: (1000),
-    Category: "Drinks",
+    Category: "Bebidas",
     attributes: [],
   },
   {
@@ -410,7 +410,7 @@ export const products = [
     ItemImg: CanadaDry,
     ItemName: "Bebida Canada Dry Ginger Ale Soda",
     ItemPrice: (1000),
-    Category: "Drinks",
+    Category: "Bebidas",
     attributes: [],
   },
 ];

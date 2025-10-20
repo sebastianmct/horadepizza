@@ -9,6 +9,7 @@ import SuccessMsg from "../../SuccessMsg";
 import ResetLocation from "../../../utils/ResetLocation";
 import headerMenu from "./data/header-menu";
 import { useCart } from "../../../context/CartContext";
+import React from "react";
 
 const Header = ({
   isLoggedIn,
@@ -23,6 +24,10 @@ const Header = ({
   const showModal = () => {
     setIsNavOpen(!isNavOpen);
   };
+
+  // Para pruebas rápidas: marca admin en localStorage con localStorage.setItem('isAdmin','true')
+  const isAdmin = typeof window !== "undefined" && localStorage.getItem("isAdmin") === "true";
+
   return (
     <header aria-labelledby="title" className="header">
       {loginModal}
@@ -107,6 +112,7 @@ const Header = ({
           <img width="80" height="80" src={isNavOpen ? closeMenu : openMenu} alt="" />
         </button>
       </nav>
+
       <SuccessMsg />
     </header>
   );

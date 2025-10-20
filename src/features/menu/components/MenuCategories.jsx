@@ -27,8 +27,8 @@ const MenuCategories = ({ setActiveCategory }) => {
         <input
           value={input}
           type="text"
-          placeholder="search..."
-          aria-label="Search products"
+          placeholder="buscando..."
+          aria-label="buscando productos"
           onChange={(e) => handleChange(e.target.value)}
         />
         <img src={SearchIcon} alt="" aria-hidden="true" />

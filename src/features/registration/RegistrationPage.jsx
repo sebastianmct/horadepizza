@@ -29,7 +29,7 @@ const RegistrationPage = ({ activateLoginModal }) => {
 
   const captchaRef = useRef();
   useEffect(() => {
-    document.title = "Registration | Pizza Time";
+    document.title = "Registrarse | Es hora de pizza";
   }, []);
 
   const handleSubmit = async (e) => {
@@ -110,12 +110,12 @@ const RegistrationPage = ({ activateLoginModal }) => {
       whileInView={slideInLeft.whileInView}
       exit={slideInLeft.exit}
       transition={slideInLeft.transition}>
-      <h2>{submit && Object.keys(formError).length === 0 ? "Success!" : "Registration"}</h2>
+      <h2>{submit && Object.keys(formError).length === 0 ? "Conseguido!" : "Registrarse"}</h2>
       {loading ? (
         <div role="status" className="loader">
           <p>Ya casi estamos...</p>
           <img
-            alt="Processing request"
+            alt="Proceso de carga"
             src="https://media0.giphy.com/media/L05HgB2h6qICDs5Sms/giphy.gif?cid=ecf05e472hf2wk1f2jou3s5fcnx1vek6ggnfcvhsjbeh7v5u&ep=v1_stickers_search&rid=giphy.gif&ct=s"
           />
         </div>
@@ -129,7 +129,7 @@ const RegistrationPage = ({ activateLoginModal }) => {
               activateLoginModal();
               setSubmit(false);
             }}
-            aria-label="Log in">
+            aria-label="Iniciar sesion">
             Iniciar sesion
           </button>
         </section>
@@ -141,7 +141,7 @@ const RegistrationPage = ({ activateLoginModal }) => {
             <input
               id="fullname"
               type="text"
-              placeholder="Enter your full name"
+              placeholder="Ingresa tu nombre completo"
               name="fullname"
               value={formValue.fullname}
               onChange={updateForm}
@@ -157,7 +157,7 @@ const RegistrationPage = ({ activateLoginModal }) => {
             <input
               id="email"
               type="text"
-              placeholder="Enter your email (e.g., name@example.com)"
+              placeholder="Ingresa correo (e.g., name@example.com)"
               name="email"
               value={formValue.email}
               onChange={updateForm}
@@ -172,7 +172,7 @@ const RegistrationPage = ({ activateLoginModal }) => {
             <input
               id="password"
               type="password"
-              placeholder="Create a strong password"
+              placeholder="Crear una contraseña"
               name="password"
               value={formValue.password}
               onChange={updateForm}
@@ -187,7 +187,7 @@ const RegistrationPage = ({ activateLoginModal }) => {
             <input
               id="repeatPassword"
               type="password"
-              placeholder="Repeat password"
+              placeholder="Repite la contraseña"
               name="repeatPassword"
               value={formValue.repeatPassword}
               onChange={updateForm}
@@ -202,7 +202,7 @@ const RegistrationPage = ({ activateLoginModal }) => {
             <input
               id="address"
               type="text"
-              placeholder="Enter your street address (optional)"
+              placeholder="Ingresa tu direccion (opcional)"
               name="address"
               value={formValue.address}
               onChange={updateForm}
@@ -217,7 +217,7 @@ const RegistrationPage = ({ activateLoginModal }) => {
             <input
               id="number"
               type="text"
-              placeholder="Enter your phone number (optional)"
+              placeholder="Ingresa tu numero de telefono (opcional)"
               name="number"
               value={formValue.number}
               onChange={updateForm}
@@ -232,7 +232,7 @@ const RegistrationPage = ({ activateLoginModal }) => {
             <Link to="/privacy">Politicas de Privacidad</Link>. Es posible que reciba una notificación por correo electrónico de nuestra parte y puede darse de baja en cualquier
             momento.
           </p>
-          <ReCAPTCHA ref={captchaRef} sitekey={CAPTCHA_KEY} theme="dark" aria-describedby="captcha-error" />
+          <ReCAPTCHA ref={captchaRef} sitekey={"6LcvQPArAAAAAHEDDICAJiI2g6K9wQ8qakI2pajn"} theme="dark" aria-describedby="captcha-error" />
           <span className="captcha-input-validation-error" aria-live="assertive" id="captcha-error">
             {captchaError}
           </span>

@@ -4,7 +4,7 @@ const SuccessMsg = ({}) => {
   const { isAddedToCart } = useCart();
   return (
     <section className={`success ${isAddedToCart ? "visible" : ""}`} role="alert" aria-live="polite">
-      <p>Item successfully added to cart!</p>
+      <p>Artículo añadido correctamente al carrito.</p>
     </section>
   );
 };
