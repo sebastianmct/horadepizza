@@ -11,7 +11,7 @@ export default defineConfig({
       },
     }),
   ],
-  base: '/', 
+  base: '/horadepizza/', 
   server: {
     port: 3000, 
     open: true, 
