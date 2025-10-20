@@ -11,7 +11,7 @@ export default defineConfig({
       },
     }),
   ],
-  base: '/horadepizza/', // Cambia esto por el nombre de tu repositorio
+  base: '/horadepizza/', // Nombre del repositorio en GitHub
   server: {
     port: 3000, 
     open: true, 
