@@ -25,12 +25,12 @@ const CartPage = ({ CartItem, activateLoginModal, isLoggedIn }) => {
       <div className="cart-totals__interaction">
         <CheckoutBtn
           className="active-button-style"
-          aria-label="Contiue with checkout"
+          aria-label="Proceder al pago"
           isLoggedIn={isLoggedIn}
           activateLoginModal={activateLoginModal}
         />
-        <LinkButton aria-label="Go back to menu" onClick={ResetLocation} to="/menu" className="back-to-menu">
-          Back to menu
+        <LinkButton aria-label="Volver al menú" onClick={ResetLocation} to="/menu" className="back-to-menu">
+          Volver al menú
         </LinkButton>
       </div>
       <ScrollBtn />

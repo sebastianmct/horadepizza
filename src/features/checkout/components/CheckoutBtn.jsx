@@ -6,18 +6,18 @@ const CheckoutBtn = ({ isLoggedIn, className, activateLoginModal }) => {
   return (
     <React.Fragment>
       {isLoggedIn ? (
-        <LinkButton onClick={ResetLocation} to="/checkout" aria-label="Proceed to checkout" className={className}>
-          Checkout
+        <LinkButton onClick={ResetLocation} to="/checkout" aria-label="Proceder al pago" className={className}>
+          Pagar
         </LinkButton>
       ) : (
         <button
           className={className}
-          aria-label="Proceed to checkout"
+          aria-label="Proceder al pago"
           onClick={() => {
             ResetLocation();
             activateLoginModal();
           }}>
-          Checkout
+          Pagar
         </button>
       )}
     </React.Fragment>
