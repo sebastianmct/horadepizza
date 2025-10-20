@@ -93,7 +93,7 @@ const ContactPage = () => {
               id="fullname"
               className="pop-font"
               type="text"
-              placeholder="Full Name"
+              placeholder="Nombre Completo"
               autoComplete="name"
               aria-describedby="fullname-error"
             />
@@ -112,7 +112,7 @@ const ContactPage = () => {
               id="email"
               className="pop-font"
               type="text"
-              placeholder="Email"
+              placeholder="Correo Electrónico"
               autoComplete="email"
               aria-describedby="email-error"
             />
@@ -130,7 +130,7 @@ const ContactPage = () => {
               name="message"
               id="message"
               className="pop-font"
-              placeholder="Message"
+              placeholder="Tu mensaje aquí..."
               aria-describedby="message-error"
             />
           </div>
